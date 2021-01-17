@@ -9,7 +9,7 @@ import UIKit
 
 class WordScramble {
     private var allWords    = [String]()
-    var usedWords   = [String]()
+    private(set) var usedWords   = [String]()
     private(set) var currentWord : String!
     
     init() {
@@ -44,13 +44,13 @@ class WordScramble {
         }
     }
     
-    func getRandomWord() -> String {
+    private func getRandomWord() -> String {
         let randomIndex = Int(arc4random_uniform(UInt32(allWords.count)))
         return !allWords.isEmpty ? allWords[randomIndex] : "?"
     }
     
     //MARK: Check if it's possible
-    func isPossible(word: String) -> Bool {
+    private func isPossible(word: String) -> Bool {
         guard !word.isEmpty, var tempAnswer = currentWord else { return false }
         
         for letter in word {
@@ -64,12 +64,12 @@ class WordScramble {
     }
     
     //MARK: Check if it's original
-    func isOriginal(word: String) -> Bool {
+    private func isOriginal(word: String) -> Bool {
         return usedWords.contains(word)
     }
     
     //MARK: Check if it's misspelleds
-    func isReal(word: String) -> Bool {
+    private func isReal(word: String) -> Bool {
         let checker = UITextChecker()
         let misspelledRange = checker.rangeOfMisspelledWord(in: word,
                                                             range: NSRange(location: 0, length: word.utf16.count),
@@ -79,6 +79,8 @@ class WordScramble {
         return misspelledRange.location == NSNotFound
     }
     
+    
+    //MARK: Verify the Answer
     func verifyAnswer(answer: String, completed: @escaping (Result<String,WSAlertError>) -> Void) {
         let lowerCasedWord = answer.lowercased()
         guard lowerCasedWord != currentWord, lowerCasedWord.count >= 3 else {

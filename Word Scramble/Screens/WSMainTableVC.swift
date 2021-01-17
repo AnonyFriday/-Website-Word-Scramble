@@ -72,7 +72,7 @@ class ViewController: UITableViewController {
         game.verifyAnswer(answer: answer) { [weak self](result) in
             guard let self = self else { return }
             switch result {
-            case .success(let _):
+            case .success(_):
                 self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
             case .failure(let error):
                 let errorTitle   = error.getErrorContents().title
