@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5C75DB6525B3E2A700EC88F1 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C75DB6425B3E2A700EC88F1 /* UIViewController+Ext.swift */; };
+		5C75DB6D25B4216B00EC88F1 /* WSTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C75DB6C25B4216B00EC88F1 /* WSTableViewCell.swift */; };
 		5CAF0EB625B2CBFD00D4B029 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAF0EB525B2CBFD00D4B029 /* AppDelegate.swift */; };
 		5CAF0EB825B2CBFD00D4B029 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAF0EB725B2CBFD00D4B029 /* SceneDelegate.swift */; };
 		5CAF0EBA25B2CBFD00D4B029 /* WSMainTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAF0EB925B2CBFD00D4B029 /* WSMainTableVC.swift */; };
@@ -17,11 +18,11 @@
 		5CAF0ECB25B2CEA200D4B029 /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5CAF0ECA25B2CEA200D4B029 /* start.txt */; };
 		5CAF0ED225B2CF5500D4B029 /* WordScramble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAF0ED125B2CF5500D4B029 /* WordScramble.swift */; };
 		5CAF0ED725B2D15D00D4B029 /* WSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAF0ED625B2D15D00D4B029 /* WSError.swift */; };
-		5CAF0EDE25B2E6EC00D4B029 /* WSTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAF0EDD25B2E6EC00D4B029 /* WSTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5C75DB6425B3E2A700EC88F1 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		5C75DB6C25B4216B00EC88F1 /* WSTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSTableViewCell.swift; sourceTree = "<group>"; };
 		5CAF0EB225B2CBFD00D4B029 /* Word Scramble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Word Scramble.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CAF0EB525B2CBFD00D4B029 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CAF0EB725B2CBFD00D4B029 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,7 +34,6 @@
 		5CAF0ECA25B2CEA200D4B029 /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = start.txt; sourceTree = "<group>"; };
 		5CAF0ED125B2CF5500D4B029 /* WordScramble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordScramble.swift; sourceTree = "<group>"; };
 		5CAF0ED625B2D15D00D4B029 /* WSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSError.swift; sourceTree = "<group>"; };
-		5CAF0EDD25B2E6EC00D4B029 /* WSTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +55,22 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		5C75DB6A25B4216B00EC88F1 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				5C75DB6B25B4216B00EC88F1 /* Cells */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		5C75DB6B25B4216B00EC88F1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5C75DB6C25B4216B00EC88F1 /* WSTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		5CAF0EA925B2CBFD00D4B029 = {
 			isa = PBXGroup;
 			children = (
@@ -74,7 +90,7 @@
 		5CAF0EB425B2CBFD00D4B029 /* Word Scramble */ = {
 			isa = PBXGroup;
 			children = (
-				5CAF0EE025B2EC2A00D4B029 /* Custom Views */,
+				5C75DB6A25B4216B00EC88F1 /* Custom Views */,
 				5CAF0EDA25B2D16300D4B029 /* Ultilities */,
 				5CAF0ED425B2D13900D4B029 /* Models */,
 				5CAF0ECD25B2CEF100D4B029 /* Screens */,
@@ -120,23 +136,6 @@
 				5CAF0ED625B2D15D00D4B029 /* WSError.swift */,
 			);
 			path = Ultilities;
-			sourceTree = "<group>";
-		};
-		5CAF0EE025B2EC2A00D4B029 /* Custom Views */ = {
-			isa = PBXGroup;
-			children = (
-				5CAF0EE125B2EC3500D4B029 /* Cells */,
-			);
-			name = "Custom Views";
-			path = ..;
-			sourceTree = "<group>";
-		};
-		5CAF0EE125B2EC3500D4B029 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				5CAF0EDD25B2E6EC00D4B029 /* WSTableViewCell.swift */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		5CAF0EE625B2F2B900D4B029 /* Local Data Storage */ = {
@@ -222,8 +221,8 @@
 				5CAF0EB625B2CBFD00D4B029 /* AppDelegate.swift in Sources */,
 				5C75DB6525B3E2A700EC88F1 /* UIViewController+Ext.swift in Sources */,
 				5CAF0ED725B2D15D00D4B029 /* WSError.swift in Sources */,
-				5CAF0EDE25B2E6EC00D4B029 /* WSTableViewCell.swift in Sources */,
 				5CAF0ED225B2CF5500D4B029 /* WordScramble.swift in Sources */,
+				5C75DB6D25B4216B00EC88F1 /* WSTableViewCell.swift in Sources */,
 				5CAF0EB825B2CBFD00D4B029 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

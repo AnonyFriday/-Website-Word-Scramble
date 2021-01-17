@@ -11,14 +11,30 @@ class ViewController: UITableViewController {
 
     lazy var game = WordScramble()
 
+
+    
+    
     override func loadView() {
         super.loadView()
+        configureNavigationitem()
+        configureTableView()
+    }
+    
+    
+    fileprivate func configureTableView() {
+        tableView.register(WSTableViewCell.self, forCellReuseIdentifier: WSTableViewCell.reusableID)
+        tableView.tableFooterView = UIView(frame: .zero)
+        tableView.rowHeight       = 70
+    }
+    
+    
+    fileprivate func configureNavigationitem() {
         navigationItem.setRightBarButtonItems(
             [UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(promptForAnswer)),
              UIBarButtonItem(title: "New game", style: .done, target: self, action: #selector(resetGame))
             ], animated: true)
-        tableView.register(WSTableViewCell.self, forCellReuseIdentifier: WSTableViewCell.reusableID)
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +67,7 @@ class ViewController: UITableViewController {
         print(cell)
         return cell
     }
+    
     
     //MARK: AlertController Section
     @objc func promptForAnswer() {
