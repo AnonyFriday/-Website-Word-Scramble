@@ -13,24 +13,28 @@ class ViewController: UITableViewController {
 
     override func loadView() {
         super.loadView()
-        navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(promptForAnswer)), animated: true)
+        navigationItem.setRightBarButtonItems(
+            [UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(promptForAnswer)),
+             UIBarButtonItem(title: "New game", style: .done, target: self, action: #selector(resetGame))
+            ], animated: true)
         tableView.register(WSTableViewCell.self, forCellReuseIdentifier: WSTableViewCell.reusableID)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        startGame()
-        
+        updateUIElements()
     }
-
     
     //MARK: startGame
-    func startGame() {
-        title = game.currentWord
-        game.usedWords.removeAll(keepingCapacity: true)
-        self.tableView.reloadData()
+    @objc func resetGame() {
+        game.getNewGame()
+        updateUIElements()
     }
     
+    func updateUIElements() {
+        title = game.currentWord
+        self.tableView.reloadData()
+    }
     
     //MARK: Table View Section
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

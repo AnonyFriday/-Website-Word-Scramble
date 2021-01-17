@@ -8,10 +8,9 @@
 import UIKit
 
 class WordScramble {
-    var allWords    = [String]()
+    private var allWords    = [String]()
     var usedWords   = [String]()
-    var currentWord : String!
-    var handleError : ((_ title: String, _ message: String) -> Void)?
+    private(set) var currentWord : String!
     var guessWord   : String!
     
     init() {
@@ -28,7 +27,10 @@ class WordScramble {
         })
     }
     
-    
+    func getNewGame() {
+        usedWords.removeAll(keepingCapacity: true)
+        currentWord = allWords.randomElement()
+    }
     
     
     static func getWordsFromFile(for resource: String, with fileExtension: String, completed: @escaping (Result<[String],WSError>) -> Void) {
