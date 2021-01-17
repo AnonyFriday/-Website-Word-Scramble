@@ -55,20 +55,20 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		5C75DB6A25B4216B00EC88F1 /* Custom Views */ = {
-			isa = PBXGroup;
-			children = (
-				5C75DB6B25B4216B00EC88F1 /* Cells */,
-			);
-			path = "Custom Views";
-			sourceTree = "<group>";
-		};
 		5C75DB6B25B4216B00EC88F1 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				5C75DB6C25B4216B00EC88F1 /* WSTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		5C75DB7025B4244600EC88F1 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				5C75DB6B25B4216B00EC88F1 /* Cells */,
+			);
+			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 		5CAF0EA925B2CBFD00D4B029 = {
@@ -90,7 +90,7 @@
 		5CAF0EB425B2CBFD00D4B029 /* Word Scramble */ = {
 			isa = PBXGroup;
 			children = (
-				5C75DB6A25B4216B00EC88F1 /* Custom Views */,
+				5C75DB7025B4244600EC88F1 /* Custom Views */,
 				5CAF0EDA25B2D16300D4B029 /* Ultilities */,
 				5CAF0ED425B2D13900D4B029 /* Models */,
 				5CAF0ECD25B2CEF100D4B029 /* Screens */,
