@@ -67,32 +67,18 @@ class ViewController: UITableViewController {
     }
     
     
+    //MARK: Submit the Answer
     func submit(answer: String) {
-        game.guessWord       = answer.lowercased()
-        
-        if game.isOriginal(word: game.guessWord)
-        {
-            if game.isPossible(word: game.guessWord)
-            {
-                if game.isReal(word: game.guessWord)
-                {
-                    game.usedWords.insert(game.guessWord, at: 0)
-                    let indexPath = IndexPath(row: 0, section: 0)
-                    self.tableView.insertRows(at: [indexPath], with: .automatic)
-                }
-                else
-                {
-                    presentErrorAlertController(title: "Word not recognised", message: "You can't just make them up, you know!", buttonTitle: "Ok")
-                }
+        game.verifyAnswer(answer: answer) { [weak self](result) in
+            guard let self = self else { return }
+            switch result {
+            case .success(let _):
+                self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+            case .failure(let error):
+                let errorTitle   = error.getErrorContents().title
+                let errorMessage = error.getErrorContents().message
+                self.presentErrorAlertController(title: errorTitle, message: errorMessage, buttonTitle: "Ok")
             }
-            else
-            {
-                presentErrorAlertController(title: "Word not possible", message: "You can't spell that word from \(game.currentWord.uppercased() )", buttonTitle: "Ok")
-            }
-        }
-        else
-        {
-            presentErrorAlertController(title: "Word used already", message: "Be more original!", buttonTitle: "Ok")
         }
     }
 }

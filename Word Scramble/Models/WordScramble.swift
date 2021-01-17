@@ -11,7 +11,6 @@ class WordScramble {
     private var allWords    = [String]()
     var usedWords   = [String]()
     private(set) var currentWord : String!
-    var guessWord   : String!
     
     init() {
         WordScramble.getWordsFromFile(for: "start", with: "txt", completed: { [weak self] (result) in
@@ -33,7 +32,7 @@ class WordScramble {
     }
     
     
-    static func getWordsFromFile(for resource: String, with fileExtension: String, completed: @escaping (Result<[String],WSError>) -> Void) {
+    static func getWordsFromFile(for resource: String, with fileExtension: String, completed: @escaping (Result<[String],WSPrintError>) -> Void) {
         
         if let contentWordsURL        = Bundle.main.url(forResource: resource, withExtension: fileExtension)
         {
@@ -66,7 +65,7 @@ class WordScramble {
     
     //MARK: Check if it's original
     func isOriginal(word: String) -> Bool {
-        return !usedWords.contains(word)
+        return usedWords.contains(word)
     }
     
     //MARK: Check if it's misspelleds
@@ -78,6 +77,29 @@ class WordScramble {
                                                             wrap: true,
                                                             language: "en_US")
         return misspelledRange.location == NSNotFound
+    }
+    
+    func verifyAnswer(answer: String, completed: @escaping (Result<String,WSAlertError>) -> Void) {
+        let lowerCasedWord = answer.lowercased()
+        guard lowerCasedWord != currentWord, lowerCasedWord.count >= 3 else {
+            completed(.failure(.isLessThanThreeLetters))
+            return
+        }
+        
+        if !isOriginal(word: lowerCasedWord) {
+            if isPossible(word: lowerCasedWord) {
+                if isReal(word: lowerCasedWord) {
+                    usedWords.insert(lowerCasedWord, at: 0)
+                    completed(.success(lowerCasedWord))
+                } else {
+                    completed(.failure(.isReal))
+                }
+            } else {
+                completed(.failure(.isPossible(currentWord)))
+            }
+        } else {
+            completed(.failure(.isOriginal))
+        }
     }
     
 }

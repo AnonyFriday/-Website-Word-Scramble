@@ -75,12 +75,12 @@
 			isa = PBXGroup;
 			children = (
 				5CAF0EE025B2EC2A00D4B029 /* Custom Views */,
-				5CAF0ECF25B2CEFF00D4B029 /* Support Files */,
 				5CAF0EDA25B2D16300D4B029 /* Ultilities */,
 				5CAF0ED425B2D13900D4B029 /* Models */,
 				5CAF0ECD25B2CEF100D4B029 /* Screens */,
 				5CAF0EC325B2CBFE00D4B029 /* Info.plist */,
 				5C75DB6125B3D35100EC88F1 /* Extensions */,
+				5CAF0ECF25B2CEFF00D4B029 /* Support Files */,
 			);
 			path = "Word Scramble";
 			sourceTree = "<group>";
