@@ -5,11 +5,14 @@
 //  Created by Vu Kim Duy on 16/1/21.
 //
 
-import Foundation
+import UIKit
 
 class WordScramble {
     var allWords    = [String]()
     var usedWords   = [String]()
+    var currentWord : String!
+    var handleError : ((_ title: String, _ message: String) -> Void)?
+    var guessWord   : String!
     
     init() {
         WordScramble.getWordsFromFile(for: "start", with: "txt", completed: { [weak self] (result) in
@@ -20,9 +23,13 @@ class WordScramble {
                 print(error)
             case .success(let words):
                 self.allWords = words
+                self.currentWord   = self.allWords.randomElement()
             }
         })
     }
+    
+    
+    
     
     static func getWordsFromFile(for resource: String, with fileExtension: String, completed: @escaping (Result<[String],WSError>) -> Void) {
         
@@ -41,4 +48,35 @@ class WordScramble {
         return !allWords.isEmpty ? allWords[randomIndex] : "?"
     }
     
+    //MARK: Check if it's possible
+    func isPossible(word: String) -> Bool {
+        guard !word.isEmpty, var tempAnswer = currentWord else { return false }
+        
+        for letter in word {
+            if let position = tempAnswer.firstIndex(of: letter) {
+                tempAnswer.remove(at: position)
+            } else {
+                return false
+            }
+        }
+        return true
+    }
+    
+    //MARK: Check if it's original
+    func isOriginal(word: String) -> Bool {
+        return !usedWords.contains(word)
+    }
+    
+    //MARK: Check if it's misspelleds
+    func isReal(word: String) -> Bool {
+        let checker = UITextChecker()
+        let misspelledRange = checker.rangeOfMisspelledWord(in: word,
+                                                            range: NSRange(location: 0, length: word.utf16.count),
+                                                            startingAt: 0,
+                                                            wrap: true,
+                                                            language: "en_US")
+        return misspelledRange.location == NSNotFound
+    }
+    
 }
+

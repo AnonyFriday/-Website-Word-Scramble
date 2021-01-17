@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C75DB6525B3E2A700EC88F1 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C75DB6425B3E2A700EC88F1 /* UIViewController+Ext.swift */; };
 		5CAF0EB625B2CBFD00D4B029 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAF0EB525B2CBFD00D4B029 /* AppDelegate.swift */; };
 		5CAF0EB825B2CBFD00D4B029 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAF0EB725B2CBFD00D4B029 /* SceneDelegate.swift */; };
-		5CAF0EBA25B2CBFD00D4B029 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAF0EB925B2CBFD00D4B029 /* ViewController.swift */; };
+		5CAF0EBA25B2CBFD00D4B029 /* WSMainTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAF0EB925B2CBFD00D4B029 /* WSMainTableVC.swift */; };
 		5CAF0EBD25B2CBFD00D4B029 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CAF0EBB25B2CBFD00D4B029 /* Main.storyboard */; };
 		5CAF0EBF25B2CBFE00D4B029 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CAF0EBE25B2CBFE00D4B029 /* Assets.xcassets */; };
 		5CAF0EC225B2CBFE00D4B029 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CAF0EC025B2CBFE00D4B029 /* LaunchScreen.storyboard */; };
@@ -17,14 +18,14 @@
 		5CAF0ED225B2CF5500D4B029 /* WordScramble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAF0ED125B2CF5500D4B029 /* WordScramble.swift */; };
 		5CAF0ED725B2D15D00D4B029 /* WSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAF0ED625B2D15D00D4B029 /* WSError.swift */; };
 		5CAF0EDE25B2E6EC00D4B029 /* WSTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAF0EDD25B2E6EC00D4B029 /* WSTableViewCell.swift */; };
-		5CAF0EE425B2EC7D00D4B029 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAF0EE325B2EC7D00D4B029 /* UIViewController+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C75DB6425B3E2A700EC88F1 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		5CAF0EB225B2CBFD00D4B029 /* Word Scramble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Word Scramble.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CAF0EB525B2CBFD00D4B029 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CAF0EB725B2CBFD00D4B029 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5CAF0EB925B2CBFD00D4B029 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5CAF0EB925B2CBFD00D4B029 /* WSMainTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSMainTableVC.swift; sourceTree = "<group>"; };
 		5CAF0EBC25B2CBFD00D4B029 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5CAF0EBE25B2CBFE00D4B029 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5CAF0EC125B2CBFE00D4B029 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -33,7 +34,6 @@
 		5CAF0ED125B2CF5500D4B029 /* WordScramble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordScramble.swift; sourceTree = "<group>"; };
 		5CAF0ED625B2D15D00D4B029 /* WSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSError.swift; sourceTree = "<group>"; };
 		5CAF0EDD25B2E6EC00D4B029 /* WSTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSTableViewCell.swift; sourceTree = "<group>"; };
-		5CAF0EE325B2EC7D00D4B029 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C75DB6125B3D35100EC88F1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5C75DB6425B3E2A700EC88F1 /* UIViewController+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		5CAF0EA925B2CBFD00D4B029 = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +80,7 @@
 				5CAF0ED425B2D13900D4B029 /* Models */,
 				5CAF0ECD25B2CEF100D4B029 /* Screens */,
 				5CAF0EC325B2CBFE00D4B029 /* Info.plist */,
+				5C75DB6125B3D35100EC88F1 /* Extensions */,
 			);
 			path = "Word Scramble";
 			sourceTree = "<group>";
@@ -79,8 +88,7 @@
 		5CAF0ECD25B2CEF100D4B029 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				5CAF0EB925B2CBFD00D4B029 /* ViewController.swift */,
-				5CAF0EE325B2EC7D00D4B029 /* UIViewController+Ext.swift */,
+				5CAF0EB925B2CBFD00D4B029 /* WSMainTableVC.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -210,9 +218,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CAF0EBA25B2CBFD00D4B029 /* ViewController.swift in Sources */,
+				5CAF0EBA25B2CBFD00D4B029 /* WSMainTableVC.swift in Sources */,
 				5CAF0EB625B2CBFD00D4B029 /* AppDelegate.swift in Sources */,
-				5CAF0EE425B2EC7D00D4B029 /* UIViewController+Ext.swift in Sources */,
+				5C75DB6525B3E2A700EC88F1 /* UIViewController+Ext.swift in Sources */,
 				5CAF0ED725B2D15D00D4B029 /* WSError.swift in Sources */,
 				5CAF0EDE25B2E6EC00D4B029 /* WSTableViewCell.swift in Sources */,
 				5CAF0ED225B2CF5500D4B029 /* WordScramble.swift in Sources */,
