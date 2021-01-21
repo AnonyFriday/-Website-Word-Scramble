@@ -2,7 +2,7 @@
 The core example of how to deal with the file system using some of built-in function based on Swift Progarmming Language
 Guessing variants from the original but being limited on the number of guessing
 
-## Instanllation 
+## Instanlation 
 
 ### IOS User
 Haven't deployed on Appsttore 
@@ -24,5 +24,6 @@ Run on multiple devices ( Available only on Iphone )
 * MVC architecture
 * Interface Builder
 * Extensions
+* ...
 
 This project is licensed under the terms of the MIT license.
